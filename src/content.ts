@@ -1,4 +1,6 @@
-﻿/* eslint-disable prefer-const */
+﻿/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable no-var */
 import fs from "fs";
@@ -42,15 +44,17 @@ export default class Content {
             res.write(személy[index] + ",");
         }
         enum KedvencSörök {
-            IPA,
-            APA,
-            NEIPA,
-            WHeat
+            Ipa = "IPA",
+            Apa = "APA",
+            Neipa = "NEIPA",
+            Wheat = "WHEAT"
         }
-        for (var index in KedvencSörök) {
-            res.write(KedvencSörök[index] + " ");
-        }
-
+        let cucc: string | boolean;
+        cucc = true;
+        cucc = "Winter IPA";
+        res.write(KedvencSörök["Ipa"] + " " + KedvencSörök["Apa"] + " " + KedvencSörök["Neipa"] + " " + KedvencSörök["Wheat"] + " " + cucc);
+        let bármi: any[] = ["SZilva", "Porter", false];
+        res.write("\n" + bármi);
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form></body></html>");
